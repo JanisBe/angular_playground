@@ -25,8 +25,28 @@ hello:any;
     }
     this.hobbies = ['rower','lasert','koks'];
     this.hello = 'hello';
+
+  }
+  onClick(){
+    this.name = "NOWE";
+    this.hobbies.push('noje hobbi');
   }
 
+  addHobby(hobby){
+
+    console.log(hobby);
+    this.hobbies.unshift(hobby);
+    return false;
+  }
+
+  deleteHobby(hobby){
+    for(let i=0; i < this.hobbies.length;i++){
+      if(this.hobbies[i]==hobby){
+        this.hobbies.splice(i,1);
+      }
+    }
+  }
+  
 }
 
 

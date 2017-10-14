@@ -4,8 +4,16 @@
   <li>{{address.city}} - {{address.state}}</li>
 </ul> 
 <hr>
+<button (click)="onClick()">click me</button>
+
+
+<form (submit)="addHobby(hobby.value)">
+  <div><label for="Hobby">Hobby</label>
+        <input type="text" #hobby></div>
+</form>
 
 <h1>hobbies</h1>
 <ul>
-  <li *ngFor="let hobby of hobbies; let i = index">{{i+1}} = {{hobby}}</li>
+  <li *ngFor="let hobby of hobbies; let i = index">{{i+1}} = {{hobby}}
+      &nbsp;&nbsp;<span (click)="deleteHobby(hobby)">X</span></li>
 </ul>
