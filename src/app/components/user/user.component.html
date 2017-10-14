@@ -1,3 +1,11 @@
-<p>
-  user works!
-</p>
+<ul>
+  <li>{{name}}</li>
+  <li>{{age}}</li>
+  <li>{{address.city}} - {{address.state}}</li>
+</ul> 
+<hr>
+
+<h1>hobbies</h1>
+<ul>
+  <li *ngFor="let hobby of hobbies; let i = index">{{i+1}} = {{hobby}}</li>
+</ul>
