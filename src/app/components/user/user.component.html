@@ -5,8 +5,17 @@
 </ul> 
 <hr>
 <button (click)="onClick()">click me</button>
-
-
+<button (click)="toggleEdit()">edit</button>
+<h2>Edit user</h2>
+<div *ngIf="isEdit">
+<form action="">
+  <div><label for="name">Name</label><input type="text" [(ngModel)]="name" name="name"></div>
+  <div><label for="age">Age</label><input type="number" [(ngModel)]="age" name="age"></div>
+  <div><label for="street">Street</label><input type="text" [(ngModel)]="address.street" name="street"></div>
+  <div><label for="city">City</label><input type="text" [(ngModel)]="address.city" name="city"></div>
+  <div><label for="state">State</label><input type="text" [(ngModel)]="address.state" name="state"></div>
+</form>
+</div>
 <form (submit)="addHobby(hobby.value)">
   <div><label for="Hobby">Hobby</label>
         <input type="text" #hobby></div>
@@ -17,3 +26,9 @@
   <li *ngFor="let hobby of hobbies; let i = index">{{i+1}} = {{hobby}}
       &nbsp;&nbsp;<span (click)="deleteHobby(hobby)">X</span></li>
 </ul>
+
+<h1>posts</h1>
+<div *ngFor="let post of posts">
+  <h4>{{post.title}}</h4>
+  <p>{{post.body}}</p>
+</div>
